@@ -1,0 +1,14 @@
+<div class="messages-container" #messagesContainer>
+  <div *ngIf="messages.length === 0" class="empty-chat">
+    <p>Сообщений пока нет. Будьте первым!</p>
+  </div>
+  <div *ngFor="let message of messages" class="message" [ngClass]="{'own-message': isOwnMessage(message.author)}">
+    <div class="message-header">
+      <span class="author">{{ message.author }}</span>
+      <span class="time">{{ formatTime(message.timestamp) }}</span>
+    </div>
+    <div class="message-body">
+      {{ message.text }}
+    </div>
+  </div>
+</div>

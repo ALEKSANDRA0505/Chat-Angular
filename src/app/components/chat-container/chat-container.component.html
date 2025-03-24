@@ -1,0 +1,17 @@
+<div class="chat-container">
+  <div *ngIf="isLoggedIn; else loginTemplate">
+    <header class="chat-header">
+      <h1>Чат</h1>
+    </header>
+    <main class="chat-main">
+      <app-message-list></app-message-list>
+    </main>
+    <footer class="chat-footer">
+      <app-message-input></app-message-input>
+    </footer>
+  </div>
+
+  <ng-template #loginTemplate>
+    <app-user-login (loginSuccess)="onLoginSuccess()"></app-user-login>
+  </ng-template>
+</div>

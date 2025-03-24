@@ -1,0 +1,15 @@
+<div class="message-input-container">
+  <textarea 
+    placeholder="Введите сообщение..." 
+    [(ngModel)]="messageText" 
+    (keydown)="onKeyDown($event)"
+    class="message-textarea"
+  ></textarea>
+  <button 
+    (click)="sendMessage()" 
+    [disabled]="!messageText.trim()"
+    class="send-button"
+  >
+    Отправить
+  </button>
+</div>

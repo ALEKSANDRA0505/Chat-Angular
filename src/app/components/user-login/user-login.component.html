@@ -1,0 +1,19 @@
+<div class="login-container">
+  <h2>Добро пожаловать в чат</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="username">Введите ваше имя:</label>
+      <input 
+        type="text" 
+        id="username" 
+        name="username" 
+        [(ngModel)]="username" 
+        required 
+        autofocus 
+        placeholder="Ваше имя"
+        class="username-input"
+      >
+    </div>
+    <button type="submit" [disabled]="!username.trim()">Войти в чат</button>
+  </form>
+</div>
